@@ -5,9 +5,12 @@ require("sinatra/activerecord")
 require("./lib/task")
 require("./lib/list")
 require("pg")
+require("pry")
 
 
 get("/") do
+  @tasks = Task.all()
+binding.pry
   erb(:index)
 end
 
